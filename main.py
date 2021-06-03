@@ -1,27 +1,17 @@
-from typing import Optional
+import fastapi
+import uvicorn
 
-from fastapi import FastAPI
-from pydantic import BaseModel
+from views import home
 
-app = FastAPI()
 
-class Item(BaseModel):
-    name: str
-    price: float
-    is_offer: Optional[bool] = None
+api = fastapi.FastAPI()
 
-@app.get('/')
-def index():
-    return {'data': 'items list'}
 
-@app.get('/items/unpublished')
-def unpublished():
-    return {'data': 'all unpublished'}
+def configure(*routers):
+    for router in list(routers):
+        api.include_router(router=router)
 
-@app.get('/items/{item_id}')
-def show(item_id: str, q: Optional[str] = None):
-    return {'data': {'item_id': item_id}}
 
-@app.put('/items/{item_id}')
-def update_item(item_id: int, item: Item):
-    return {'item_name': item.price, 'item_id': item_id}
+configure(home.router)
+if __name__ == '__main__':
+    uvicorn.run(app=api, host='127.0.0.1', port=8080)

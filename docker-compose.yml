@@ -1,0 +1,11 @@
+version: '3'
+services:
+    core_api:
+        build:
+            context: app
+            dockerfile: Dockerfile
+        container_name: 'boarding-school'
+        ports:
+            - "8000:15400"
+        volumes:
+            - ./app/:/app
