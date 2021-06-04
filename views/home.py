@@ -55,12 +55,6 @@ def font_awesome():
     return StreamingResponse(content=file_like, media_type='image/svg+xml')
 
 
-# @router.get('/assets/images/imac.png')
-# def font_awesome():
-#     file_like = open(f'{directory}/assets/images/imac.png', mode='rb')
-#     return StreamingResponse(content=file_like, media_type='image/png')
-
-
 @router.get('/assets/images/figure-1.png')
 def font_awesome():
     file_like = open(f'{directory}/assets/images/figure-1.png', mode='rb')
