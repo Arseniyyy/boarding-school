@@ -1,4 +1,4 @@
 # Start
 ```
-uvicorn main:app --reload
+uvicorn main:api --reload
 ```
