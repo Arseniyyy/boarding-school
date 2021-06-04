@@ -95,3 +95,15 @@ def font_awesome():
 def font_awesome():
     file_like = open(f'{directory}/assets/images/Drozd.jpg', mode='rb')
     return StreamingResponse(content=file_like, media_type='image/jpg')
+
+
+@router.get('/assets/images/cash1.png')
+def font_awesome():
+    file_like = open(f'{directory}/assets/images/cash1.png', mode='rb')
+    return StreamingResponse(content=file_like, media_type='image/png')
+
+
+@router.get('/assets/images/me.jpg')
+def font_awesome():
+    file_like = open(f'{directory}/assets/images/me.jpg', mode='rb')
+    return StreamingResponse(content=file_like, media_type='image/jpg')
