@@ -3,8 +3,7 @@ from typing import Optional
 import fastapi
 from fastapi import FastAPI
 from fastapi.templating import Jinja2Templates
-from pydantic import BaseModel
-from starlette.requests import Request, Receive
+from starlette.requests import Request
 from fastapi.responses import StreamingResponse
 
 
